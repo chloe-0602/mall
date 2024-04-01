@@ -2,6 +2,7 @@ package com.xuluqin.mall.member;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * 1、想要远程调用别的服务
@@ -11,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 3）、开启远程调用功能
  */
 //@EnableFeignClients(basePackages = "com.atguigu.gulimall.member.feign")
-//@EnableDiscoveryClient
+@EnableDiscoveryClient
 @SpringBootApplication
 public class GulimallMemberApplication {
 
