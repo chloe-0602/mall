@@ -3,6 +3,7 @@ package com.xuluqin.mall.product;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * 1、整合MyBatis-Plus
@@ -52,8 +53,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *  2）、使用@ExceptionHandler标注方法可以处理的异常。
  */
 //@EnableFeignClients(basePackages = "com.atguigu.gulimall.product.feign")
-//@EnableDiscoveryClient
-//@MapperScan("com.atguigu.gulimall.product.dao")
+@EnableDiscoveryClient
 @MapperScan("com.xuluqin.mall.product.dao")
 @SpringBootApplication
 public class GulimallProductApplication {
