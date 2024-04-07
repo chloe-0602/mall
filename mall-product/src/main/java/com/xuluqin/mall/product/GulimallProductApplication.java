@@ -22,10 +22,15 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  *              2）、告诉MyBatis-Plus，sql映射文件位置
  *
  * 2、逻辑删除
- *  1）、配置全局的逻辑删除规则（省略）
- *  2）、配置逻辑删除的组件Bean（省略）
- *  3）、给Bean加上逻辑删除注解@TableLogic
- *
+ *  1）、配置全局的逻辑删除规则（高版本 省略） application.yml
+         *mybatis-plus:
+                *logicdelete-value:1 # 逻辑已删除值(默认为 1)
+                *logic-not-delete-value:0 # 逻辑未删除值(默认为 0)
+ *  2）、配置逻辑删除的组件Bean（高版本省略）
+ *  3）、给Bean加上逻辑删除注解@TableLogic  CategoryEntity
+        @TableLogic* 	private Integer showStatus;
+        但是此处1表示显示，0表示不显示
+        @TableLogic(value = "1",delval = "0")
  * 3、JSR303
  *   1）、给Bean添加校验注解:javax.validation.constraints，并定义自己的message提示
  *   2)、开启校验功能@Valid
