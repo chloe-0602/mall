@@ -19,3 +19,6 @@ mybatis-plus:
 
 server:
   port: 10001
+logging:
+  level:
+    com.xuluqin.mall: debug
