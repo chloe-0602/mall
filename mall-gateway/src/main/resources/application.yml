@@ -17,7 +17,7 @@ spring:
         predicates:
           - Path=/api/product/**
         filters:
-          - RewritePath=/api/product/(?<segment>.*),/$\{segment}
+          - RewritePath=/api/(?<segment>.*),/$\{segment}
 
       - id: admin-route
         uri: lb://renren-fast
