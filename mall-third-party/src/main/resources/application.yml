@@ -8,6 +8,7 @@ spring:
       secret-key: QFn672ck3zKEHlraCCUD6g5i6mBorm
       oss:
         endpoint: oss-cn-shanghai.aliyuncs.com
+        bucket: mall-cherry
 
 
   application:
