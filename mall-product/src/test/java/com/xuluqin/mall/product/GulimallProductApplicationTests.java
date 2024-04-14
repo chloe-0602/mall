@@ -45,8 +45,8 @@ public class GulimallProductApplicationTests {
     @Test
     public void testUpload() throws FileNotFoundException {
         String endpoint = "oss-cn-shanghai.aliyuncs.com";
-        String accessKeyId = "LTAI5tCHHtRoNLqXqhtt9gkR";
-        String accessKeySecret = "QFn672ck3zKEHlraCCUD6g5i6mBorm";
+        String accessKeyId = "";
+        String accessKeySecret = "";
         OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
         InputStream inputStream = new FileInputStream("C:\\Users\\herry\\Desktop\\bug.jpg");
         ossClient.putObject("mall-cherry", "1.jpg", inputStream);
