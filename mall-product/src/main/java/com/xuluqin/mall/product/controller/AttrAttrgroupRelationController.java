@@ -3,6 +3,8 @@ package com.xuluqin.mall.product.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.xuluqin.common.utils.PageUtils;
+import com.xuluqin.common.utils.R;
 import com.xuluqin.mall.product.entity.AttrAttrgroupRelationEntity;
 import com.xuluqin.mall.product.service.AttrAttrgroupRelationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.xuluqin.common.utils.PageUtils;
-import com.xuluqin.common.utils.R;
 
 
 
