@@ -33,7 +33,7 @@ public class OssController {
     private String accessId;
 
     @RequestMapping("oss/policy")
-    public Map<String, String> policy() throws ClientException {
+    public R policy() throws ClientException {
 
         //https://mall-cherry.oss-cn-shanghai.aliyuncs.com/1.jpg
         String host = "https://" + bucket + "." + endpoint; // host的格式为 bucketname.endpoint
@@ -74,6 +74,6 @@ public class OssController {
             System.out.println(e.getMessage());
         }
 
-        return respMap;
+        return R.ok().put("data", respMap);
     }
 }
