@@ -1,11 +1,13 @@
 package com.xuluqin.mall.product.controller;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 
 import com.xuluqin.mall.product.entity.BrandEntity;
 import com.xuluqin.mall.product.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -59,8 +61,23 @@ public class BrandController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("product:brand:save")
-    public R save(@Valid @RequestBody BrandEntity brand){
-		brandService.save(brand);
+    public R save(@Valid @RequestBody BrandEntity brand, BindingResult result){
+        Map<String, String> map = new HashMap<>();
+        if (result.hasErrors()){
+            // 1.获取错误信息
+            result.getFieldErrors().forEach(item -> {
+                // 2.获取错误提示
+                String message = item.getDefaultMessage();
+                // 3.获取错误的属性的名字
+                String field = item.getField();
+                // 4.将错误信息封装到map中
+                map.put(field, message);
+            });
+            return R.error(400, "提交的数据不合法").put("data", map);
+        }else{
+            brandService.save(brand);
+        }
+
 
         return R.ok();
     }
