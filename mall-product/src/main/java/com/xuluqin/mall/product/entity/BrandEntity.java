@@ -3,9 +3,12 @@ package com.xuluqin.mall.product.entity;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
+
 import java.io.Serializable;
 
 import lombok.Data;
+
+import javax.validation.constraints.*;
 
 /**
  * 品牌
@@ -27,6 +30,7 @@ public class BrandEntity implements Serializable {
 	/**
 	 * 品牌名
 	 */
+	@NotBlank
 	private String name;
 	/**
 	 * 品牌logo地址
