@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.xuluqin.common.vaild.AddGroup;
+import com.xuluqin.common.vaild.UpdateStatusGroup;
 import com.xuluqin.mall.product.entity.BrandEntity;
 import com.xuluqin.mall.product.service.BrandService;
 import org.apache.ibatis.annotations.Update;
@@ -92,6 +93,14 @@ public class BrandController {
     //@RequiresPermissions("product:brand:update")
     public R update(@Validated(Update.class) @RequestBody BrandEntity brand){
 		brandService.updateById(brand);
+
+        return R.ok();
+    }
+
+    @RequestMapping("/update/status")
+    //@RequiresPermissions("product:brand:update")
+    public R updateStatus(@Validated(UpdateStatusGroup.class) @RequestBody BrandEntity brand){
+        brandService.updateById(brand);
 
         return R.ok();
     }
