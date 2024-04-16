@@ -54,14 +54,14 @@ public class BrandEntity implements Serializable {
 	/**
 	 * 检索首字母
 	 */
-	@NotEmpty
-	@Pattern(regexp = "^[a-zA-Z]$",message = "检索首字母必须是一个字母")
+	@NotEmpty(groups = {AddGroup.class})
+	@Pattern(regexp = "^[a-zA-Z]$",message = "检索首字母必须是一个字母",groups = {AddGroup.class, UpdateGroup.class})
 	private String firstLetter;
 	/**
 	 * 排序
 	 */
-	@NotNull
-	@Min(value = 0,message = "排序必须大于等于0")
+	@NotNull(groups = {AddGroup.class})
+	@Min(value = 0,message = "排序必须大于等于0",groups = {AddGroup.class, UpdateGroup.class})
 	private Integer sort;
 
 }

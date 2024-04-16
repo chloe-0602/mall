@@ -7,6 +7,7 @@ import java.util.Map;
 import com.xuluqin.common.vaild.AddGroup;
 import com.xuluqin.mall.product.entity.BrandEntity;
 import com.xuluqin.mall.product.service.BrandService;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -89,7 +90,7 @@ public class BrandController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("product:brand:update")
-    public R update(@RequestBody BrandEntity brand){
+    public R update(@Validated(Update.class) @RequestBody BrandEntity brand){
 		brandService.updateById(brand);
 
         return R.ok();
