@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 
 import com.xuluqin.common.vaild.AddGroup;
+import com.xuluqin.common.vaild.ListValue;
 import com.xuluqin.common.vaild.UpdateGroup;
 import lombok.Data;
 import org.hibernate.validator.constraints.URL;
@@ -50,6 +51,7 @@ public class BrandEntity implements Serializable {
 	/**
 	 * 显示状态[0-不显示；1-显示]
 	 */
+	@ListValue(vals = {0,1},groups = {AddGroup.class, UpdateGroup.class})
 	private Integer showStatus;
 	/**
 	 * 检索首字母
